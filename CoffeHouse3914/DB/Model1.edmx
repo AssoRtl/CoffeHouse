@@ -185,9 +185,9 @@
         <EntityType Name="VW_TheBiggestGuest">
           <Key>
             <PropertyRef Name="Имя" />
-            <PropertyRef Name="Телефон" />
             <PropertyRef Name="Уровень скидки" />
             <PropertyRef Name="Доступные баллы" />
+            <PropertyRef Name="Телефон" />
           </Key>
           <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Телефон" Type="char" MaxLength="12" Nullable="false" />

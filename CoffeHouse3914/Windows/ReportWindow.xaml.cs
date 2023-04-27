@@ -25,7 +25,7 @@ namespace CoffeHouse3914.Windows
         {
             InitializeComponent();
             List<string> sortList = new List<string>()
-            {"По умолчанию","За сегодня","За неделю","За месяц","За год","По возрастанию суммы"};
+            {"По умолчанию","За сегодня","За эту неделю","За этот месяц","За год","По возрастанию суммы"};
             CMBFilter.ItemsSource= sortList;
             CMBFilter.SelectedIndex = 0;
             OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList();
@@ -39,16 +39,19 @@ namespace CoffeHouse3914.Windows
                     OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList();
                     break;
                 case 1:
-                    OrdersGrid.ItemsSource = EFClass.Context.VW_Report.OrderBy(i => i.Date).ToList();
+                    OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList().Where(i => i.Date < DateTime.Now && i.Date > DateTime.Today.AddDays(-1));
                     break;
                    
                 case 2:
+                    OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList().Where(i => i.Date < DateTime.Now && i.Date > DateTime.Today.AddDays(-7));
                     break;
 
                 case 3:
+                    OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList().Where(i => i.Date < DateTime.Now && i.Date > DateTime.Today.AddMonths(-1));
                     break;
 
                 case 4:
+                    OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList().Where(i => i.Date < DateTime.Now && i.Date > DateTime.Today.AddYears(-0,1));
                     break;
 
                 case 5:
