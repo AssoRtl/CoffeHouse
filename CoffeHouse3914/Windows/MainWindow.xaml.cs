@@ -53,5 +53,13 @@ namespace CoffeHouse3914
             menuWindow.ShowDialog();
             this.Show();
         }
+
+        private void BtnReport_Click(object sender, RoutedEventArgs e)
+        {
+            ReportWindow reportWindow = new ReportWindow();
+            this.Hide();
+            reportWindow.ShowDialog();
+            this.Show();
+        }
     }
 }

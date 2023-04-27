@@ -34,7 +34,7 @@
     <Property Name="IDGender" Type="int" Nullable="false" />
     <Property Name="Birthday" Type="date" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="PersonalCode" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="PersonalCode" Type="varchar" MaxLength="8" />
     <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IDPost" Type="int" Nullable="false" />
@@ -52,7 +52,7 @@
     </Key>
     <Property Name="IDGuest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Phone" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="Phone" Type="char" MaxLength="12" />
     <Property Name="IDGender" Type="int" Nullable="false" />
     <Property Name="Birthday" Type="date" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
@@ -161,6 +161,19 @@
     <Property Name="Скидочный код" Type="char" MaxLength="6" Nullable="false" />
     <Property Name="Баланс балов" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Уровень скидки" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "KoffeeHouse.dbo.VW_Report" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="VW_Report">
+    <Key>
+      <PropertyRef Name="FullName" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Сумма" Type="decimal" Precision="38" Scale="2" />
   </EntityType>
   <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "KoffeeHouse.dbo.VW_TheBiggestGuest" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -458,6 +471,14 @@
     [VW_LevelDiscountGuest].[Баланс балов] AS [Баланс балов], 
     [VW_LevelDiscountGuest].[Уровень скидки] AS [Уровень скидки]
     FROM [dbo].[VW_LevelDiscountGuest] AS [VW_LevelDiscountGuest]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_Report" EntityType="Self.VW_Report" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VW_Report].[FullName] AS [FullName], 
+    [VW_Report].[Name] AS [Name], 
+    [VW_Report].[Date] AS [Date], 
+    [VW_Report].[Сумма] AS [Сумма]
+    FROM [dbo].[VW_Report] AS [VW_Report]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="VW_TheBiggestGuest" EntityType="Self.VW_TheBiggestGuest" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

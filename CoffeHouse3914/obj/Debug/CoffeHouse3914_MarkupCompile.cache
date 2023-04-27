@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\IMac6\source\repos\CoffeHouse3914\CoffeHouse3914\App.xaml
-11527367719
+12912025574
 2-973498431
-45-1609210140
+46-542225531
 18-1721908499
-Windows\AuthWindow.xaml;Windows\CartWindow.xaml;Windows\ChangeAddEmployeeWindow.xaml;Windows\DirectorWindow.xaml;Windows\EmployeeWindow.xaml;Windows\LogRegWindow.xaml;Windows\MainWindow.xaml;Windows\MenuChangeWindow.xaml;Windows\MenuWindow.xaml;Windows\OrderWindow.xaml;Windows\RegWindow.xaml;
+Windows\AuthWindow.xaml;Windows\CartWindow.xaml;Windows\ChangeAddEmployeeWindow.xaml;Windows\DirectorWindow.xaml;Windows\EmployeeWindow.xaml;Windows\LogRegWindow.xaml;Windows\MainWindow.xaml;Windows\MenuChangeWindow.xaml;Windows\MenuWindow.xaml;Windows\OrderWindow.xaml;Windows\RegWindow.xaml;Windows\ReportWindow.xaml;
 
-True
+False
 

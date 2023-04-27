@@ -35,6 +35,13 @@
                 Height="30" Click="BtnEmployeeList_Click"
                 />
 
+            <Button
+                x:Name="BtnReport"
+                Content="Отчёты"
+                Margin="10"
+                Height="30" Click="BtnReport_Click" 
+                />
+
         </StackPanel>
     </Grid>
 </Window>

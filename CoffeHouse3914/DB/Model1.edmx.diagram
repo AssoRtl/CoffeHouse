@@ -33,6 +33,7 @@
         <AssociationConnector Association="KoffeeHouseModel.FK_Supply_Supplier" ManuallyRouted="false" />
         <AssociationConnector Association="KoffeeHouseModel.EmloeeWorkShift" ManuallyRouted="false" />
         <AssociationConnector Association="KoffeeHouseModel.StuffSupply" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KoffeeHouseModel.VW_Report" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище KoffeeHouseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище KoffeeHouseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="IDCategory" />
@@ -39,7 +39,7 @@
           <Property Name="IDGender" Type="int" Nullable="false" />
           <Property Name="Birthday" Type="date" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PersonalCode" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="PersonalCode" Type="varchar" MaxLength="8" />
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="IDPost" Type="int" Nullable="false" />
@@ -57,7 +57,7 @@
           </Key>
           <Property Name="IDGuest" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Phone" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="12" />
           <Property Name="IDGender" Type="int" Nullable="false" />
           <Property Name="Birthday" Type="date" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
@@ -166,6 +166,19 @@
           <Property Name="Скидочный код" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="Баланс балов" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Уровень скидки" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "KoffeeHouse.dbo.VW_Report" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="VW_Report">
+          <Key>
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Date" />
+          </Key>
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Сумма" Type="decimal" Precision="38" Scale="2" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "KoffeeHouse.dbo.VW_TheBiggestGuest" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -464,6 +477,14 @@
     [VW_LevelDiscountGuest].[Уровень скидки] AS [Уровень скидки]
     FROM [dbo].[VW_LevelDiscountGuest] AS [VW_LevelDiscountGuest]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="VW_Report" EntityType="Self.VW_Report" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_Report].[FullName] AS [FullName], 
+    [VW_Report].[Name] AS [Name], 
+    [VW_Report].[Date] AS [Date], 
+    [VW_Report].[Сумма] AS [Сумма]
+    FROM [dbo].[VW_Report] AS [VW_Report]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VW_TheBiggestGuest" EntityType="Self.VW_TheBiggestGuest" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VW_TheBiggestGuest].[Имя] AS [Имя], 
@@ -539,8 +560,7 @@
             <End Role="Supply" EntitySet="Supply" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KoffeeHouseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -592,7 +612,7 @@
           <Property Name="IDGender" Type="Int32" Nullable="false" />
           <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PersonalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PersonalCode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDPost" Type="Int32" Nullable="false" />
@@ -616,7 +636,7 @@
           </Key>
           <Property Name="IDGuest" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="IDGender" Type="Int32" Nullable="false" />
           <Property Name="Birthday" Type="DateTime" Precision="0" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -950,7 +970,7 @@
             <End Role="Supply" EntitySet="Supply" />
           </AssociationSet>
           <FunctionImport Name="UDF_GetLevelGuest" IsComposable="true" ReturnType="Collection(KoffeeHouseModel.UDF_GetLevelGuest_Result)">
-            <Parameter Name="Lvl" Mode="In" Type="Int32" />
+          <Parameter Name="Lvl" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="UDF_SupplyDate" IsComposable="true" ReturnType="Collection(KoffeeHouseModel.UDF_SupplyDate_Result)">
             <Parameter Name="sDate" Mode="In" Type="DateTime" />
@@ -992,6 +1012,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="VW_Report" EntityType="KoffeeHouseModel.VW_Report" />
         </EntityContainer>
         <ComplexType Name="PR_getStuffExpirationDate_Result">
           <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
@@ -1018,6 +1039,17 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="VW_Report">
+          <Key>
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Date" />
+          </Key>
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Сумма" Type="Decimal" Precision="38" Scale="2" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1288,6 +1320,16 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище KoffeeHouseModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище KoffeeHouseModel.sp_upgraddiagrams" />
+          <EntitySetMapping Name="VW_Report">
+            <EntityTypeMapping TypeName="KoffeeHouseModel.VW_Report">
+              <MappingFragment StoreEntitySet="VW_Report">
+                <ScalarProperty Name="Сумма" ColumnName="Сумма" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

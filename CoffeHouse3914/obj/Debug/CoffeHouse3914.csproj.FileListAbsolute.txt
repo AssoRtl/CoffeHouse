@@ -41,3 +41,5 @@ C:\Users\IMac6\source\repos\CoffeHouse3914\CoffeHouse3914\obj\Debug\Windows\Chan
 C:\Users\IMac6\source\repos\CoffeHouse3914\CoffeHouse3914\obj\Debug\Windows\ChangeAddEmployeeWindow.baml
 C:\Users\IMac6\source\repos\CoffeHouse3914\CoffeHouse3914\obj\Debug\Windows\CartWindow.g.cs
 C:\Users\IMac6\source\repos\CoffeHouse3914\CoffeHouse3914\obj\Debug\Windows\CartWindow.baml
+C:\Users\IMac6\source\repos\CoffeHouse3914\CoffeHouse3914\obj\Debug\Windows\ReportWindow.g.cs
+C:\Users\IMac6\source\repos\CoffeHouse3914\CoffeHouse3914\obj\Debug\Windows\ReportWindow.baml
