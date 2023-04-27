@@ -16,4 +16,7 @@
 ![image](https://user-images.githubusercontent.com/106968938/233966535-e5101588-ab82-432e-b24f-dc8b09ce6ce0.png)
 ![image](https://user-images.githubusercontent.com/106968938/233966635-81fa9e0f-5a44-41e9-821c-e006fa0c78c1.png)
 ![image](https://user-images.githubusercontent.com/106968938/233966673-da867a9e-055b-4e92-8cae-da243f4b5a92.png)
+Окно отчёта для директора 
+![image](https://user-images.githubusercontent.com/106968938/234785272-0ff42f36-51be-43e6-b517-2e95b12f4369.png)
+
 
