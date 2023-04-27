@@ -1,4 +1,6 @@
 # CoffeHouse
+
+Авторизация по ролям
 ![image](https://user-images.githubusercontent.com/106968938/230560268-3cc5dbc7-6d74-4245-a013-db980b4b5f2a.png)
 ![image](https://user-images.githubusercontent.com/106968938/230560311-f6013b39-b136-47e7-85df-75ca2a82b98d.png)
 ![image](https://user-images.githubusercontent.com/106968938/230560347-8062df60-23c5-4d5c-8cc0-0252835a82ac.png)
