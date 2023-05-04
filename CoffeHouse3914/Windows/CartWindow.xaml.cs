@@ -33,6 +33,12 @@ namespace CoffeHouse3914.Windows
             ObservableCollection<DB.Stuff> stuffs= new ObservableCollection<DB.Stuff>(ClassHelper.CartClass.stuffs);
 
             LvCartList.ItemsSource= stuffs;
+            decimal price=0;
+            foreach (var item in CartClass.stuffs)
+            {
+                price += item.Price * item.Quantity;
+            }
+            TbPrice.Text=price.ToString()+" руб.";
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)

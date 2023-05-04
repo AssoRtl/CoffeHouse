@@ -22,6 +22,17 @@
                 HorizontalAlignment="Left" 
                 VerticalAlignment="Center" Click="BtnBack_Click" />
 
+        <TextBlock
+            x:Name="TbPrice"
+            FontSize="20"
+            Grid.Row="0"
+            Height="40"
+                Width="120"
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Center"
+            Text="111"
+            Margin="0 0 30 0"/>
+
         <ListView x:Name="LvCartList" 
                   Grid.Row="1" 
                   d:ItemsSource="{d:SampleData ItemCount=7}"

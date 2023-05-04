@@ -51,7 +51,7 @@ namespace CoffeHouse3914.Windows
                     break;
 
                 case 4:
-                    OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList().Where(i => i.Date < DateTime.Now && i.Date > DateTime.Today.AddYears(-0,1));
+                    OrdersGrid.ItemsSource = EFClass.Context.VW_Report.ToList().Where(i => i.Date < DateTime.Now && i.Date > DateTime.Today.AddYears(-1));
                     break;
 
                 case 5:
