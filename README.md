@@ -23,5 +23,8 @@
 ![image](https://user-images.githubusercontent.com/106968938/234871039-3919498b-fc13-481f-a30e-a1950811a9b1.png)
 ![image](https://user-images.githubusercontent.com/106968938/234871147-721fd644-1ac3-4034-a313-af2199ab81f6.png)
 ![image](https://user-images.githubusercontent.com/106968938/234871192-9ccbe2c5-d863-479c-98ff-a914caed509d.png)
+цена указывается в корзине
+![image](https://user-images.githubusercontent.com/106968938/236199602-9e2ea869-b03f-46e4-91fb-c5a0c768a058.png)
+![image](https://user-images.githubusercontent.com/106968938/236199640-e89d9dcc-c22e-4247-b70b-3ba1e1539425.png)
 
 
