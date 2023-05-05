@@ -38,7 +38,20 @@ namespace CoffeHouse3914.Windows
             {
                 price += item.Price * item.Quantity;
             }
-            TbPrice.Text=price.ToString()+" руб.";
+            
+            DateTime dateTime= new DateTime();
+            dateTime = DateTime.Now;
+            if (dateTime.DayOfWeek==DayOfWeek.Thursday)
+            { 
+                for (int i = 22; i < 28; i++)
+                {
+                    if (dateTime.Day==i)
+                    {
+                        price = price - (price * (decimal)0.04);
+                    }
+                }
+            }
+            TbPrice.Text = price.ToString() + " руб.";
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
